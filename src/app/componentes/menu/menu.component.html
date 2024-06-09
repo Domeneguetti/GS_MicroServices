@@ -85,7 +85,7 @@
 
     <tr *ngFor="let item of dados">
       <td>{{ item.regiao }}</td>
-      <td>{{ item.tempAgua }}</td>
+      <td>{{ item.temperaturaAgua }}</td>
       <td>{{ item.pH }}</td>
       <td>{{ item.nivelPoluicao }}</td>
       <td>
@@ -100,17 +100,17 @@
       </td>
       <td>
         <ul style="list-style-type: none;">
-          <li *ngFor="let projeto of item.projetoConservacao">{{projeto.nomeDoProjeto}} <br><br></li>
+          <li *ngFor="let projeto of item.projetosConservacao">{{projeto.nomeProjeto}} <br><br></li>
         </ul>
       </td>
       <td>
         <ul style="list-style-type: none;">
-          <li *ngFor="let projeto of item.projetoConservacao">{{projeto.tipoDoProjeto}} <br><br></li>
+          <li *ngFor="let projeto of item.projetosConservacao">{{projeto.tipoProjeto}} <br><br></li>
         </ul>
       </td>
       <td>
         <ul style="list-style-type: none;">
-          <li *ngFor="let projeto of item.projetoConservacao">{{ projeto.tipoColaboracao }} <br><br></li>
+          <li *ngFor="let projeto of item.projetosConservacao">{{ projeto.tipoParticipacao }} <br><br></li>
         </ul>
       </td>
     </tr>

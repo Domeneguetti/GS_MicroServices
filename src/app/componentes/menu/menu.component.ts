@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { menuService } from '../../services/menu.service';
-import { OceanData } from '../../interfaces/oceanData';
+import { OceanData } from '../../interfaces/oceanData'
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
