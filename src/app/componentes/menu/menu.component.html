@@ -1,0 +1,117 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    nav {
+        background-color: #0074D9;
+        color: #FFF;
+        padding: 10px;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .filters {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        border: 1px solid #DDD;
+        padding: 10px;
+        align-items: center;
+    }
+    .filters select, .filters input[type="text"] {
+        margin-right: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #DDD;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #ace8ff;
+    }
+  
+  </style>
+
+
+<div class="filters">
+    <label for="regiao">Região:</label>
+    <select id="regiao" name="regiao">
+        <option value="todos">Todos</option>
+    </select>
+  
+    <label for="especies">Especies:</label>
+    <select id="especies" name="especies">
+        <option value="todos">Todos</option>
+    </select>
+  
+    <label for="conservation-status">Status de Conservação:</label>
+    <select id="conservation-status" name="conservation_status">
+        <option value="todos">Todos</option>
+    </select>
+  
+    <label for="tempAgua">Temperatura da Água:</label>
+    <input type="text" id="tempAgua" name="tempAgua">
+  
+    <label for="ph">pH:</label>
+    <input type="text" id="ph" name="ph">
+  
+    <label for="poluicao">Nivel de Poluição:</label>
+    <input type="text" id="poluicao" name="poluicao">
+
+  </div>
+
+  <table>
+    <tr>
+      <th>Região</th>
+      <th>Temperatura da Água</th>
+      <th>pH</th>
+      <th>Nível de Poluição</th>
+      <th>Nome da Espécie</th>
+      <th>Status da Espécie</th>
+      <th>Projeto de Conservação</th>
+      <th>Tipo do Projeto de Conservação</th>
+      <th>Tipo de Colaboração</th>
+    </tr>
+
+    <tr *ngFor="let item of dados">
+      <td>{{ item.regiao }}</td>
+      <td>{{ item.tempAgua }}</td>
+      <td>{{ item.pH }}</td>
+      <td>{{ item.nivelPoluicao }}</td>
+      <td>
+        <ul style="list-style-type: none;">
+          <li *ngFor="let especie of item.especies">{{especie.nome}} <br><br> </li>
+        </ul>
+      </td>
+      <td>
+        <ul style="list-style-type: none;">
+          <li *ngFor="let especie of item.especies">{{especie.status}} <br><br></li>
+        </ul>
+      </td>
+      <td>
+        <ul style="list-style-type: none;">
+          <li *ngFor="let projeto of item.projetoConservacao">{{projeto.nomeDoProjeto}} <br><br></li>
+        </ul>
+      </td>
+      <td>
+        <ul style="list-style-type: none;">
+          <li *ngFor="let projeto of item.projetoConservacao">{{projeto.tipoDoProjeto}} <br><br></li>
+        </ul>
+      </td>
+      <td>
+        <ul style="list-style-type: none;">
+          <li *ngFor="let projeto of item.projetoConservacao">{{ projeto.tipoColaboracao }} <br><br></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
