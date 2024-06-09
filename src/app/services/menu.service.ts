@@ -12,7 +12,7 @@ export class menuService {
 
   dados:OceanData[] = [];
 
-  listarOceanData(): Observable<OceanData[]> {
+  listarOceanData(apiUrl: string): Observable<OceanData[]> {
     return this.http.get<OceanData[]>(this.apiUrl);
   }
 }
